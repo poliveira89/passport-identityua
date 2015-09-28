@@ -1,26 +1,24 @@
 {
-  "name": "passport-twitter",
-  "version": "1.0.3",
-  "description": "Twitter authentication strategy for Passport.",
+  "name": "passport-identityua",
+  "version": "1.0.4",
+  "description": "University of Aveiro authentication strategy for Passport.",
   "keywords": [
     "passport",
-    "twitter",
+    "ua",
     "auth",
     "authn",
     "authentication",
     "identity"
   ],
   "author": {
-    "name": "Jared Hanson",
-    "email": "jaredhanson@gmail.com",
-    "url": "http://www.jaredhanson.net/"
+    "name": "Paulo Oliveira"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jaredhanson/passport-twitter.git"
+    "url": "git@github.com:poliveira89/passport-identityua.git"
   },
   "bugs": {
-    "url": "http://github.com/jaredhanson/passport-twitter/issues"
+    "url": "https://github.com/poliveira89/passport-identityua/issues"
   },
   "license": "MIT",
   "licenses": [
@@ -31,6 +29,7 @@
   ],
   "main": "./lib",
   "dependencies": {
+    "async": "^1.4.2",
     "passport-oauth1": "1.x.x",
     "xtraverse": "0.1.x"
   },

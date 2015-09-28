@@ -1,47 +1,52 @@
-# passport-twitter
+# passport-identityua
 
-[![Build](https://travis-ci.org/jaredhanson/passport-twitter.svg?branch=master)](https://travis-ci.org/jaredhanson/passport-twitter)
-[![Coverage](https://coveralls.io/repos/jaredhanson/passport-twitter/badge.svg?branch=master)](https://coveralls.io/r/jaredhanson/passport-twitter)
-[![Quality](https://codeclimate.com/github/jaredhanson/passport-twitter/badges/gpa.svg)](https://codeclimate.com/github/jaredhanson/passport-twitter)
-[![Dependencies](https://david-dm.org/jaredhanson/passport-twitter.svg)](https://david-dm.org/jaredhanson/passport-twitter)
-[![Tips](https://img.shields.io/gratipay/jaredhanson.svg)](https://gratipay.com/jaredhanson/)
-
-
-[Passport](http://passportjs.org/) strategy for authenticating with [Twitter](http://twitter.com/)
+[Passport](http://passportjs.org/) strategy for authenticating with [IdentityUA](http://identity.ua.pt/)
 using the OAuth 1.0a API.
 
-This module lets you authenticate using Twitter in your Node.js applications.
-By plugging into Passport, Twitter authentication can be easily and
-unobtrusively integrated into any application or framework that supports
-[Connect](http://www.senchalabs.org/connect/)-style middleware, including
-[Express](http://expressjs.com/).
+This module lets you authenticate using Universal User from University of Aveiro (UA) in your Node.js applications.
 
 ## Install
 
-    $ npm install passport-twitter
+    $ npm install passport-identityua
 
 ## Usage
 
 #### Configure Strategy
 
-The Twitter authentication strategy authenticates users using a Twitter account
+The IdentityUA authentication strategy authenticates users using a Universal User UA account
 and OAuth tokens.  The strategy requires a `verify` callback, which receives the
 access token and corresponding secret as arguments, as well as `profile` which
-contains the authenticated user's Twitter profile.   The `verify` callback must
+contains the authenticated user's UA profile. The `verify` callback must
 call `done` providing a user to complete authentication.
 
-In order to identify your application to Twitter, specify the consumer key,
-consumer secret, and callback URL within `options`.  The consumer key and secret
-are obtained by [creating an application](https://dev.twitter.com/apps) at
-Twitter's [developer](https://dev.twitter.com/) site.
+In order to identify your application to IdentityUA, specify the consumer key,
+consumer secret, callback URL and scope within `options`.  The consumer key and secret
+are obtained by [creating an application](http://identity.ua.pt/oauth/apps) at
+IdentityUA site.
 
-    passport.use(new TwitterStrategy({
-        consumerKey: TWITTER_CONSUMER_KEY,
-        consumerSecret: TWITTER_CONSUMER_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/twitter/callback"
+    passport.use(new IdentityUaStrategy({
+        consumerKey: IDENTITYUA_CONSUMER_KEY,
+        consumerSecret: IDENTITYUA_CONSUMER_SECRET,
+        callbackURL: "http://127.0.0.1:3000/auth/ua/callback"
       },
       function(token, tokenSecret, profile, done) {
-        User.findOrCreate({ twitterId: profile.id }, function (err, user) {
+        User.findOrCreate({ id: profile.id }, function (err, user) {
+          return done(err, user);
+        });
+      }
+    ));
+
+#### NOT READY
+The following example demonstrastes the right usage of the `scope`, but be warned this still does not work as expected.
+
+    passport.use(new IdentityUaStrategy({
+        consumerKey: IDENTITYUA_CONSUMER_KEY,
+        consumerSecret: IDENTITYUA_CONSUMER_SECRET,
+        callbackURL: "http://127.0.0.1:3000/auth/ua/callback",
+        scope: ['uu', 'name']
+      },
+      function(token, tokenSecret, profile, done) {
+        User.findOrCreate({ id: profile.id }, function (err, user) {
           return done(err, user);
         });
       }
@@ -49,39 +54,40 @@ Twitter's [developer](https://dev.twitter.com/) site.
 
 #### Authenticate Requests
 
-Use `passport.authenticate()`, specifying the `'twitter'` strategy, to
+Use `passport.authenticate()`, specifying the `'identityua'` strategy, to
 authenticate requests.
 
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/twitter',
-      passport.authenticate('twitter'));
+    app.get('/auth/ua',
+      passport.authenticate('identityua'));
     
-    app.get('/auth/twitter/callback', 
-      passport.authenticate('twitter', { failureRedirect: '/login' }),
+    app.get('/auth/ua/callback', 
+      passport.authenticate('identityua', { failureRedirect: '/login' }),
       function(req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');
       });
-
-## Examples
-
-Developers using the popular [Express](http://expressjs.com/) web framework can
-refer to an [example](https://github.com/passport/express-4.x-twitter-example)
-as a starting point for their own web applications.
 
 ## Tests
 
     $ npm install
     $ npm test
 
+## TODO
+
+- [ ] Fix `scope` bug
+- [ ] Fix "Strategy parsing error from access token endpoint parsing error should error" test (it's hardcoded to pass)
+- [ ] Enable to parse XML and JSON by choice on `parse` function on `profile.js` 
+
 ## Credits
 
-  - [Jared Hanson](http://github.com/jaredhanson)
+  - [Jared Hanson](http://github.com/jaredhanson) (developed the code before the fork)
+  - [Paulo Oliveira](http://github.com/poliveira89)
 
 ## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011-2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
+Copyright (c) 2015 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
