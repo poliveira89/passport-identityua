@@ -1,17 +1,17 @@
 var chai = require('chai')
-  , TwitterStrategy = require('../lib/strategy');
+  , IdentityUaStrategy = require('../lib/strategy');
 
 
 describe('Strategy', function() {
     
-  var strategy = new TwitterStrategy({
+  var strategy = new IdentityUaStrategy({
       consumerKey: 'ABC123',
       consumerSecret: 'secret'
     },
     function() {});
     
-  it('should be named twitter', function() {
-    expect(strategy.name).to.equal('twitter');
+  it('should be named identityua', function() {
+    expect(strategy.name).to.equal('identityua');
   });
   
   describe('handling a return request in which authorization was denied by user', function() {

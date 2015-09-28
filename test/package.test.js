@@ -1,6 +1,6 @@
 var strategy = require('..');
 
-describe('passport-twitter', function() {
+describe('passport-identityua', function() {
     
   it('should export Strategy constructor directly from package', function() {
     expect(strategy).to.be.a('function');
