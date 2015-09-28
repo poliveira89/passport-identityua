@@ -1,5 +1,10 @@
 # passport-identityua
 
+[![Build Status](https://travis-ci.org/poliveira89/passport-identityua.svg)](https://travis-ci.org/poliveira89/passport-identityua)
+[![Coverage Status](https://coveralls.io/repos/poliveira89/passport-identityua/badge.svg?branch=master&service=github)](https://coveralls.io/github/poliveira89/passport-identityua?branch=master)
+[![Code Climate](https://codeclimate.com/github/poliveira89/passport-identityua/badges/gpa.svg)](https://codeclimate.com/github/poliveira89/passport-identityua)
+[![Dependencies](https://david-dm.org/poliveira89/passport-identityua.svg)](https://david-dm.org/poliveira89/passport-identityua)
+
 [Passport](http://passportjs.org/) strategy for authenticating with [IdentityUA](http://identity.ua.pt/)
 using the OAuth 1.0a API.
 
