@@ -60,3 +60,7 @@ case $nodeVersion in
     npm install coveralls@2.x.x -g
     ;;
 esac
+
+if [ $? != 0 ]; then
+    cat npm-debug.log
+fi
