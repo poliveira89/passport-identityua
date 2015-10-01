@@ -1,7 +1,9 @@
 # passport-identityua
 
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/passport-identityua)
 [![Build Status](https://travis-ci.org/poliveira89/passport-identityua.svg)](https://travis-ci.org/poliveira89/passport-identityua)
 [![Coverage Status](https://coveralls.io/repos/poliveira89/passport-identityua/badge.svg?branch=master&service=github)](https://coveralls.io/github/poliveira89/passport-identityua?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/d20ac5ee14e1494a80716b7b16e637c8)](https://www.codacy.com/app/paulonascimento89/passport-identityua)
 [![Code Climate](https://codeclimate.com/github/poliveira89/passport-identityua/badges/gpa.svg)](https://codeclimate.com/github/poliveira89/passport-identityua)
 [![Dependencies](https://david-dm.org/poliveira89/passport-identityua.svg)](https://david-dm.org/poliveira89/passport-identityua)
 
