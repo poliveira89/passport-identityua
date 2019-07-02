@@ -29,7 +29,6 @@
   ],
   "main": "./lib",
   "dependencies": {
-    "async": "^1.4.2",
     "passport-oauth1": "1.x.x",
     "xtraverse": "0.1.x"
   },
