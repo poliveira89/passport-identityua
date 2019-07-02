@@ -1,4 +1,12 @@
 {
-  "iupi": "07c7a7c5-3c78-46c8-afc2-7341cefc7165",
-  "email": "example.user@ua.pt"
+  "scope": "uu",
+  "data": {
+    "iupi": "07c7a7c5-3c78-46c8-afc2-7341cefc7165",
+    "email": "example.user@ua.pt"
+  },
+  "_json": {
+    "iupi": "07c7a7c5-3c78-46c8-afc2-7341cefc7165",
+    "email": "example.user@ua.pt"
+  },
+  "_raw": "{\"email\":\"antoniojps@ua.pt\",\"iupi\":\"c3c63153-4b08-4f8e-a01f-b75bc1096cf2\"}"
 }
