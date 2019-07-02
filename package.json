@@ -43,5 +43,13 @@
   },
   "scripts": {
     "test": "node_modules/.bin/mocha --reporter spec --require test/bootstrap/node test/*.test.js"
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "none",
+    "jsxBracketSameLine": false,
+    "singleQuote": false,
+    "tabWidth": 2,
+    "printWidth": 80
   }
 }
