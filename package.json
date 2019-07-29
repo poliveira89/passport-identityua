@@ -1,5 +1,5 @@
 {
-  "name": "passport-identityua",
+  "name": "@antoniojps/passport-identityua",
   "version": "2.0.0",
   "description": "University of Aveiro authentication strategy for Passport.",
   "keywords": [
