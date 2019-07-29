@@ -11,14 +11,14 @@
     "identity"
   ],
   "author": {
-    "name": "Paulo Oliveira"
+    "name": "Antonio Santos"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:poliveira89/passport-identityua.git"
+    "url": "git@github.com:antoniojps/passport-identityua.git"
   },
   "bugs": {
-    "url": "https://github.com/poliveira89/passport-identityua/issues"
+    "url": "https://github.com/antoniojps/passport-identityua/issues"
   },
   "license": "MIT",
   "licenses": [
