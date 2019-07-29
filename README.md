@@ -14,7 +14,7 @@ This module lets you authenticate using Universal User from University of Aveiro
 
 ## Install
 
-    $ npm install passport-identityua
+    $ npm install @antoniojps/passport-identityua
 
 ## Usage
 
